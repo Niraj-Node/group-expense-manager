@@ -42,14 +42,9 @@
 			<% 
         } 
       %>
-<<<<<<< HEAD
 		</div>
 
 		<% 
-=======
-    </div>
-    <% 
->>>>>>> b810731a08f4d20be7f07771c1adbf656204789e
       if (username != null) { 
     %>
 		<section class="group-section">
@@ -114,8 +109,8 @@
                %>
                </ul>
                <% 
-               con.close();
-              
+             
+              con.close();
            }catch (SQLException ex) {
                ex.printStackTrace();
            }
@@ -125,14 +120,57 @@
 		</section>
 
 		<section class="dues-section">
-			<h2>Dues</h2>
-			<ul>
-				<li>Person 1</li>
-				<li>Person 2</li>
-				<li>Person 3</li>
-				<!-- Add more persons as needed -->
-			</ul>
-		</section>
+		
+            <h2>Dues</h2>
+            <ul>
+            <%
+            String url = "jdbc:mysql://localhost:3306/expense_tracker";
+            String dbUsername = "root";
+            String dbPassword = "";
+            Connection con1 = DriverManager.getConnection(url, dbUsername, dbPassword);
+            
+               int userId=Integer.parseInt(session.getAttribute("uid").toString());
+               String sql1="SELECT * FROM `transactions`,users WHERE users.uid=transactions.uid2 AND transactions.uid1=?";
+               PreparedStatement ps1 = con1.prepareStatement(sql1);
+               ps1.setInt(1, userId);
+               ResultSet res = ps1.executeQuery();
+               
+               while(res.next())
+              
+               {
+            %>
+              
+                <li>
+                    <span class="person-name"><%= res.getString("uname") %></span>
+                    <span class="levana"> 0000</span>
+                    <span class="devana"> <%= res.getInt("amount") %></span>
+                    <button class="clear-button"><a href="clearRecord.jsp">Clear</a></button>
+                </li>
+             <%
+               }
+               sql1="SELECT * FROM `transactions`,users WHERE users.uid=transactions.uid1 AND transactions.uid2=?";
+                ps1 = con1.prepareStatement(sql1);
+               ps1.setInt(1, userId);
+                res = ps1.executeQuery();
+               
+               while(res.next())
+              
+               {
+              
+              
+             %>
+             <li>
+                    <span class="person-name"><%= res.getString("uname") %></span>
+                    <span class="levana"><%= res.getInt("amount") %> </span>
+                    <span class="devana">0000 </span>
+                    <button class="clear-button"><a href="clearRecord.jsp">Clear</a></button>
+                </li>
+               <%
+               }
+               con1.close();
+               %>
+            </ul>
+        </section>
 		<% 
       } 
     %>
