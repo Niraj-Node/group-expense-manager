@@ -23,8 +23,6 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
             // Create database connection
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url, dbUsername, dbPassword);
-
-            // Check if username and password match
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM users WHERE uname = ? AND password = ?");
             stmt.setString(1, username);
             stmt.setString(2, password);
@@ -35,6 +33,8 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                 // Create session and store username
                 session = request.getSession();
                 session.setAttribute("username", username);
+                int uid = rs.getInt("uid");
+                session.setAttribute("uid",uid);
 
                 // Redirect to home.jsp
                 response.sendRedirect("home.jsp");

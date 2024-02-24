@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color : yellowgreen;
 }
 
 header {
@@ -11,6 +12,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 0;
 }
 
 .search-bar {
@@ -36,10 +38,10 @@ header {
     cursor: pointer;
 }
 
-.menu-icon img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+.menu-icon{
+    text-decoration: none;
+    size: 3cm;
+    color: #000000;
 }
 
 main {
@@ -53,7 +55,7 @@ section {
     border-radius: 40px;
     border: 2px black solid;
     margin: 5px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 h2 {
@@ -63,7 +65,8 @@ h2 {
 ul {
     list-style-type: none;
     padding: 5px;
-    overflow-y: auto; /* Add scroll if content exceeds the height */
+    height: 300px;
+  	overflow-y: auto; /* Add scroll if content exceeds the height */
     max-height: 300px; /* Set a fixed maximum height */
 }
 
@@ -75,43 +78,79 @@ li {
     border: 2px black solid;
     width: auto;
 }
+.person-name{
+    padding: 0px;
+}
 
+.levana{
+    margin-left: 250px;
+    color: green;
+}
+
+.devana{
+    margin-left: 50px;
+    color: red;
+}
+
+.clear-button
+{
+    text-decoration: none;
+    background-color: aqua;
+    border-radius: 20px;
+    height: 20px;
+    margin-left: 200px;
+}
 /* Customize scrollbar */
 section::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-    border-radius: 10px; /* Match the border radius */
+    width: 0px; /* Set the width to 0 to hide the scrollbar */
 }
 
-section::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Background color of the scrollbar track */
+/* Optional: Show scrollbar on hover */
+section:hover::-webkit-scrollbar {
+    width: 10px; /* Set the width to display scrollbar on hover */
 }
-
-section::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar thumb */
-    border-radius: 5px; /* Rounded corners */
-}
-
-section::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color of the scrollbar thumb on hover */
-}
-
 
 .add-button {
     background-color: #c1ff70;
     color: rgb(0, 0, 0);
-    border: 2px solid #4CAF50; /* Add a border */
+    border: 3px solid #030303; /* Add a border */
     border-radius: 50%;
     width: 40px; /* Increase width for a larger circular button */
     height: 40px; /* Increase height for a larger circular button */
     cursor: pointer;
     margin-left: 550px; /* Adjust margin as needed */
     font-size: large;
-    justify-content: center;
-    align-items: center;
+    position: relative; /* Add position relative for absolute positioning */
+    display: inline-block;
+}
+
+
+
+.add-options {
+    display: none;
+    position: absolute;
+    background-color: #fafcf7;
+    color: black;
+    border: 2px solid #000000; /* Add a border */
+    border-radius: 25px;
+    padding: 0px;
+    margin-left: 37.5%;
+    z-index: 1; /* Ensure options are above other content */
+}
+
+.add-options a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Change text color to black */
+}
+.add-button:hover + .add-options,
+.add-options:hover {
+    display: block; /* Show options on hover */
 }
 
 footer {
-    margin-top: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #DEE4D7; /* Use the same color as the header */
     color: #333; /* Use the same text color as the header */
     padding: 10px;
@@ -119,3 +158,74 @@ footer {
 }
 
 
+
+
+
+
+.create-group {
+    margin: 50px auto;
+    max-width: 600px; /* Increase the max-width for a larger box */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+
+.create-group h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.create-group form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-group label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.create-group input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.create-group button[type="submit"] {
+    background-color: aqua;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.create-group button[type="submit"]:hover {
+    background-color: #6cb2eb;
+}
+
+
+.group{
+    font-size:300%;
+    text-align: center;
+}
+
+.group-data{
+    font-size: 200%;
+    text-align: center;
+}
+
+td{
+    border:solid 2px #000000;
+}
+
+
+.main-group{
+    display: flex;
+    justify-content: space-around;
+}
