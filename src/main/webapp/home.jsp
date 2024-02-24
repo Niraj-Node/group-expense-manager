@@ -42,9 +42,14 @@
 			<% 
         } 
       %>
+<<<<<<< HEAD
 		</div>
 
 		<% 
+=======
+    </div>
+    <% 
+>>>>>>> b810731a08f4d20be7f07771c1adbf656204789e
       if (username != null) { 
     %>
 		<section class="group-section">
