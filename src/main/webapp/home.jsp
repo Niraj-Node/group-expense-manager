@@ -38,7 +38,6 @@
         } 
       %>
     </div>
-    
     <% 
       if (username != null) { 
     %>
