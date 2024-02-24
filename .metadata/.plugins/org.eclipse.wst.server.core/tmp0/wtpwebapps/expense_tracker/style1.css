@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #DEE4D7;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    width: 100px;
+    margin-left: 200px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 500px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+}
+
+section {
+    flex: 1;
+    padding: 20px;
+    background-color: #C3FFF8;
+    border-radius: 40px;
+    border: 2px black solid;
+    margin: 5px;
+    margin-top: 100px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+    overflow-y: auto; /* Add scroll if content exceeds the height */
+    max-height: 300px; /* Set a fixed maximum height */
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #c1ff70;
+    border-radius: 40px;
+    border: 2px black solid;
+    width: auto;
+}
+
+/* Customize scrollbar */
+section::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    border-radius: 10px; /* Match the border radius */
+}
+
+section::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the scrollbar track */
+}
+
+section::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners */
+}
+
+section::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+
+.add-button {
+    background-color: #c1ff70;
+    color: rgb(0, 0, 0);
+    border: 2px solid #4CAF50; /* Add a border */
+    border-radius: 50%;
+    width: 40px; /* Increase width for a larger circular button */
+    height: 40px; /* Increase height for a larger circular button */
+    cursor: pointer;
+    margin-left: 550px; /* Adjust margin as needed */
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    margin-top: 100px;
+    background-color: #DEE4D7; /* Use the same color as the header */
+    color: #333; /* Use the same text color as the header */
+    padding: 10px;
+    text-align: center;
+}
+
+

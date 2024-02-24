@@ -1,0 +1,27 @@
+<%@ page import="java.io.*,java.util.*" %>
+<%@ page import="javax.servlet.*" %>
+<%@ page import="javax.servlet.http.*" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome</h2>
+    <% HttpSession session = request.getSession(false);
+    if (session != null && session.getAttribute("username") != null) { %>
+      <p>Welcome, <%= session.getAttribute("username") %>!</p>
+      <a href="logout.jsp">Logout</a>
+    <% } else { %>
+      <p>You are not logged in.</p>
+      <a href="register.jsp">Register</a>
+      <a href="login.jsp">Login</a>
+    <% } %>
+  </div>
+</body>
+</html>
