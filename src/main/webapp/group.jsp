@@ -53,7 +53,7 @@
            gname=rs.getString("gname");
            %>
     <h2 style="display: flex;justify-content: space-around;font-size:300%;"><%=gname%></h2>
-    <a class="add-transaction-button" href="add_transaction.html">Add Transaction</a>
+    <a class="add-transaction-button" href="add_transaction.jsp?gid=<%=gid %>">Add Transaction</a>
     <ul>
     <li>
             <span class="group-list-head"><b>Transaction No</b></span>
