@@ -11,6 +11,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
 <link rel="stylesheet" href="style1.css">
+<style>
+.btn{
+   outline:none;
+   border:none;
+   padding:10px 20px;
+   border-radius:10px;
+   font-size:20px;
+   background-color:#fff;
+   color:#4caf50;
+   
+}
+button:hover {
+  background-color: #4CAF50;
+  color: #fff; 
+}
+a{
+  text-decoration:none;
+}
+</style>
 </head>
 <body>
 	<header>
@@ -142,15 +161,18 @@
               
                 <li>
                     <span class="person-name"><%= res.getString("uname") %></span>
-                    <span class="levana"> 0000</span>
+                    <span class="levana">0000</span>
                     <span class="devana"> <%= res.getInt("amount") %></span>
-                    <button class="clear-button"><a href="clearRecord.jsp">Clear</a></button>
+                    <button class="btn">
+                    <a href="clearRecord.jsp?uid2=<%=res.getInt("uid")%>">Clear</a>
+                    </button>
+                    
                 </li>
              <%
                }
                sql1="SELECT * FROM `transactions`,users WHERE users.uid=transactions.uid1 AND transactions.uid2=?";
                 ps1 = con1.prepareStatement(sql1);
-               ps1.setInt(1, userId);
+                ps1.setInt(1, userId);
                 res = ps1.executeQuery();
                
                while(res.next())
@@ -162,8 +184,11 @@
              <li>
                     <span class="person-name"><%= res.getString("uname") %></span>
                     <span class="levana"><%= res.getInt("amount") %> </span>
-                    <span class="devana">0000 </span>
-                    <button class="clear-button"><a href="clearRecord.jsp">Clear</a></button>
+                    <span class="devana">0000</span>
+                    <button class="btn">
+                    <a href="clearRecord.jsp?uid2=<%=res.getInt("uid")%>">Clear</a>
+                    </button>
+                    
                 </li>
                <%
                }

@@ -62,6 +62,8 @@
             pstmt.executeUpdate();
             pstmt.close();
             conn.close();
+            response.sendRedirect("home.jsp");
+            return;
         } catch (Exception e) {
             e.printStackTrace();
         }
