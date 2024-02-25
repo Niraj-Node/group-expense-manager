@@ -33,7 +33,7 @@
         String groupName = request.getParameter("group-name"); // New input field for group name
         int uid = Integer.parseInt(session.getAttribute("uid").toString());
         
-        // Check if group name is empty
+        
         if (groupName.isEmpty()) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
