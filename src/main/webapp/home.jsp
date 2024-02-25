@@ -29,10 +29,10 @@
 	<main>
 		<div class="container">
 
-			<% 
+		<% 
         String username = (String) session.getAttribute("username");
         if (username != null) { 
-      %>
+       %>
 
 			<% 
         } else { 
@@ -88,13 +88,13 @@
             	   int gid = rs.getInt("gid");
                    String groupName = rs.getString("gname");
                   %>
-			
+			    
 				<li>
 					<div style="display: flex; justify-content: space-between">
 						<div>
-							<% 
-                   out.print(groupName);
-                    %>
+						 
+						<a href="group.jsp?gid=<%=gid%>" style="text-decoration:none"><%=groupName%></a>
+					
 						</div>
 
 						<div>
