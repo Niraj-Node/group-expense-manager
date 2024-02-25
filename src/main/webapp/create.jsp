@@ -50,7 +50,7 @@
         }
         
         int gid = sum2-sum1;
-        out.println(gid);
+       
         sql = "INSERT INTO groups_users (gid,uid,gname) values (?,?,?)";
         ps = con.prepareStatement(sql);
         ps.setInt(1,gid);
