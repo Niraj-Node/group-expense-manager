@@ -246,13 +246,13 @@ footer {
     background-color: yellowgreen;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 2px solid black;
-    border-radius: 15%;
+    border: 3px solid black;
+    border-radius: 40px;
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
 .close {
-    color: #aaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -260,7 +260,48 @@ footer {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Add Transaction button styles */
+.add-transaction-button {
+    text-decoration: none;
+    background-color: aqua;
+    border-radius: 20px;
+    height: 30px;
+    margin-left: 90%;
+    /* margin-right: 20px; Adjust margin as needed */
+    font-size: 14px; /* Adjust font size as needed */
+    cursor: pointer;
+    border: none;
+    padding: 8px 15px;
+    color: black;
+}
+
+.add-transaction-button:hover {
+    background-color: #6cb2eb;
+}
+
+.person-name {
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+.number-input {
+    margin-left: 100px;
+    background-color: aqua;
+    border-radius: 5px;
+    width: 80px;
+}
+
+#total-sum {
+    font-weight: bold;
+}
+
+.add-transaction-list{
+    width: 1000px;
+    margin-left: 250px;
+    text-align:center;
 }
